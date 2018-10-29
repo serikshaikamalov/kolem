@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'kiosk'
+    redirectTo: 'projects'
   },
   {
     path: 'about',
@@ -14,6 +14,14 @@ const routes: Routes = [
   {
     path: 'projects',
     loadChildren: "./modules/projects/projects.module#ProjectsModule"
+  },
+  {
+    path: 'services',
+    loadChildren: "./modules/services/services.module#ServicesModule"
+  },
+  {
+    path: 'contacts',
+    loadChildren: "./modules/contacts/contacts.module#ContactsModule"
   }
 ];
 

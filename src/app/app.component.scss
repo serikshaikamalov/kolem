@@ -53,7 +53,9 @@ header{
 }
 
 /*** CONTENT ***/
-section#content{}
+section#content{
+    min-height: 500px;
+}
 
 /*** Footer ***/
 footer{}
