@@ -1,0 +1,64 @@
+section#project-details-section{
+    section#project-details-header-section{        
+        position: relative;
+
+
+        img{
+            width: 100%;
+        }
+
+        .project-meta{
+            background-color: #000000;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            h1{
+                color: #ffffff;
+                font-size: 25px;
+                text-align: center;
+            }
+
+            ul.project-meta-menu{
+                li {
+                    
+                }
+            }
+        }
+    }
+
+    section.full-photo-list{        
+        .full-photo-item{
+            margin-top: 30px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    section.short-photo-list-section{
+        margin-top: 50px;
+        
+        .short-photo-list{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .short-photo{
+                width: 485px;
+                margin-bottom: 30px;
+    
+                img{
+                    width: 100%;
+                }
+            }
+        }                        
+    }
+}

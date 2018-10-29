@@ -1,31 +1,33 @@
-<section id="projects-section">
+<div class="container">
+    <section id="projects-section">
+
+        <!-- Header -->
+        <section id="project-types-section">
+            <ul id="project-types">
+                <li *ngFor="let type of projectTypes">
+                    <a (click)="filterByProjetType( type.ProjectTypeId )" [ngClass]="{'active': type.ProjectTypeId == typeId}">{{ type.Title }}</a>
+                </li>            
+            </ul>
+        </section>
     
-    <!-- Header -->
-    <section id="project-types-section">
-        <ul id="project-types">
-            <li *ngFor="let type of projectTypes">
-                <a (click)="filterByProjetType( type.ProjectTypeId )" [ngClass]="{'active': type.ProjectTypeId == typeId}">{{ type.Title }}</a>
-            </li>            
-        </ul>
+        <!-- Content -->
+        <section id="projects-content-section">
+    
+            <div class="project" *ngFor="let project of projects">
+                
+                <!-- Image -->
+                <img src="{{ project.ImageSrc }}" alt="" />
+                
+                <!-- Meta -->
+                <div class="meta">
+                    <a routerLink="/projects/details/{{ project.Id }}">
+                        {{ project.Title }}
+                    </a>                
+                    <div class=""></div>
+                </div>
+            </div>        
+    
+        </section>
+    
     </section>
-
-    <!-- Content -->
-    <section id="projects-content-section">
-
-        <div class="project" *ngFor="let project of projects">
-            
-            <!-- Image -->
-            <img src="{{ project.ImageSrc }}" alt="" />
-            
-            <!-- Meta -->
-            <div class="meta">
-                <a routerLink="/projects/details/{{ project.Id }}">
-                    {{ project.Title }}
-                </a>                
-                <div class=""></div>
-            </div>
-        </div>        
-
-    </section>
-
-</section>
+</div>
