@@ -1,4 +1,6 @@
-/*** HEADER ***/
+/*
+    HEADER
+*/
 header{
     //background-color: #ffffff;
     background-color: antiquewhite;
@@ -6,6 +8,7 @@ header{
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
 
+    // Logo
     section#logo-section{
         a{
             img{
@@ -14,6 +17,7 @@ header{
         }        
     }
 
+    // Main menu
     section#main-menu-section{
         ul#main-menu{            
             li{
@@ -26,10 +30,15 @@ header{
                 a{
                     color: #000000;
                     text-transform: uppercase;
+                    &.active{
+                        font-weight: bold;
+                    }
                 }
             }
         }
     }
+
+    // Social groups
     section#social-groups-section{
         margin-left: 50px;
         ul#social-groups{
@@ -43,8 +52,8 @@ header{
 
                 a{
                     img{
-                        height: 20px;
-                        width: 20px;
+                        height: 15px;
+                        width: auto;
                     }
                 }
             }
@@ -52,12 +61,16 @@ header{
     }
 }
 
-/*** CONTENT ***/
+/*
+    CONTENT 
+*/
 section#content{
     min-height: 500px;
 }
 
-/*** Footer ***/
+/* 
+    FOOTER
+*/
 footer{}
 
 

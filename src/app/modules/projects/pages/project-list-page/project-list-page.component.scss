@@ -19,6 +19,11 @@ section#project-types-section{
 
             a{
                 text-transform: uppercase;
+                cursor: pointer;
+
+                &.active{
+                    font-weight: bold;
+                }                
             }
         }        
     }
@@ -41,5 +46,31 @@ section#projects-content-section{
         height: 300px;
         background-color: #B1B2B3;
         margin-bottom: 30px;
+        position: relative;
+
+        img{
+            position: absolute;            
+            width: 100%;
+            height: inherit;
+        }
+
+        .meta{
+            visibility: hidden;
+            position: absolute;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 100px;
+            background-color: #000000;
+            opacity: 0.5;
+
+            a{
+                color: #ffffff;
+            }
+        }
+
+        &:hover .meta{
+            visibility: visible;
+        }
     }
 }

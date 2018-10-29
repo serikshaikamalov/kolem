@@ -3,38 +3,28 @@
     <!-- Header -->
     <section id="project-types-section">
         <ul id="project-types">
-            <li>
-                <a href="">Все</a>
-            </li>
-            <li>
-                <a href="">Архитектура</a>
-            </li>
-            <li>
-                <a href="">Интерьер</a>
-            </li>
-            <li>
-                <a href="">Визуализация</a>
-            </li>
+            <li *ngFor="let type of projectTypes">
+                <a (click)="filterByProjetType( type.ProjectTypeId )" [ngClass]="{'active': type.ProjectTypeId == typeId}">{{ type.Title }}</a>
+            </li>            
         </ul>
     </section>
 
     <!-- Content -->
     <section id="projects-content-section">
 
-        <div class="project">
-            Project 1
-        </div>
-        <div class="project">
-            Project 2
-        </div>
-
-        <div class="project">
-            Project 3
-        </div>
-
-        <div class="project">
-            Project 4
-        </div>
+        <div class="project" *ngFor="let project of projects">
+            
+            <!-- Image -->
+            <img src="{{ project.ImageSrc }}" alt="" />
+            
+            <!-- Meta -->
+            <div class="meta">
+                <a routerLink="/projects/details/{{ project.Id }}">
+                    {{ project.Title }}
+                </a>                
+                <div class=""></div>
+            </div>
+        </div>        
 
     </section>
 
