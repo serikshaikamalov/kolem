@@ -40,16 +40,64 @@ ul{
 
 
 .flex-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;            
 
+    // WRAP
+    &.flex-wrap{
+        flex-wrap: wrap;
+    }
+
+    &.flex-no-wrap{
+        flex-wrap: nowrap;
+    }
+
+    // DIRECTION
+    &.flex-direction-row{
+        flex-direction: row;
+    }
+
+    &.flex-direction-column{
+        flex-direction: column;
+    }
+
+    // Content
+    &.flex-content-space-between{
+        justify-content: space-between;
+    }
+
+    &.flex-content-vertically-center{
+        align-items: center;
+    }
+
+
+    
     .flex-item{        
+
+        &.flex-item-width-50{
+            width: 50%;
+        }
+        
         &.flex-item-right{
             margin-left: auto;
         }
     }
 
 
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+.margin-top-50{
+    margin-top: 50px;
+}
+
+.padding-right-20{
+    padding-right: 20px;
+}
+
+.padding-left-50{
+    padding-left: 50px;
 }

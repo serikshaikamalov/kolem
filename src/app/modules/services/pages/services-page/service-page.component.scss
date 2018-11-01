@@ -1,0 +1,118 @@
+.services-page{
+
+    background-color: #ffffff;
+    padding-top: 20px;
+
+
+    // ABOUT
+    section#services-about{
+        display: flex;
+        flex-direction: row;
+    
+        .services-about-header{
+            width: 39%;
+    
+            h1{
+    
+            }
+        }
+    
+        .services-about-content{
+            width: 60%;
+
+            .sac-first{
+                padding-bottom: 20px;
+            }
+
+            // SECOND
+            .sac-second{                
+
+                .sac-second-header{
+                    h2{
+                        font-size: 18px;
+                    }
+                }
+                .sac-second-content{
+                    display: flex;
+                    flex-direction: row;
+
+                    .sac-second-item{
+                        width: 50%;
+
+                        &:first-child{
+                            padding-right: 20px;
+                        }
+
+                        h3{
+
+                        }
+                    }                    
+                }
+            }
+            .sac-third{
+                margin-top: 40px;
+            }
+
+            .sac-item{                
+            }
+        }
+    }
+
+
+    // SECTION: STEPS
+    section#services-steps{
+        margin-top: 50px;
+
+
+        .section-steps-content{
+            .ssc-item{
+                width: 100px;
+
+                .ssc-item-left{}
+                .ssc-item-right{}
+            }
+
+            .arrow-right{
+                width: 60px;
+            }
+
+        }
+    }
+
+    
+
+
+    // GENERAL
+    .section-header{
+        font-size: 18px;
+    }
+    .section-sub-header{
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    // LIST: Circle
+    ul.list-circle{
+        li{
+            list-style-type: circle;
+            margin-left: 20px;
+        }
+    }
+
+
+    // Rectangle
+    .rectangle{
+        &.rectangle-black{
+            background-color: #5b5b5b;
+            width: 50px;
+            margin: 0 auto;
+
+            img{
+                width: 100%;
+                height: 100%;;
+            }
+        }
+    }
+ 
+
+}
