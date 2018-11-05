@@ -1,51 +1,82 @@
-<section id="project-details-section">
+<section id="project-details-section" *ngIf="project" class="background-gray">
     
     <!-- Header -->
     <section id="project-details-header-section">
         
-        <img src="../assets/images/interier_01_details_header.png" alt="">
+        <img src="../assets/images/{{project.Images.MainImageSrc}}" alt="" *ngIf="project.Images.MainImageSrc">
 
+        <!-- Shadow -->
+        <div class="shadow">
+        </div>
 
         <div class="project-meta">
             <div class="container">
-                <h1>ДИЗАЙН 1-КОМНАТНОЙ КВАРТИРЫ В Г. АЛМАТЫ</h1>
+                <h1>{{ project.Title }}</h1>
 
                 <ul class="project-meta-menu">
+
+                    <!-- Year -->
                     <li>
-                        <div>
-                            <I>Icon</I>
-                            <span>Год проектирования 2011</span>
+                        <div class="meta-single">
+                            <img src="../assets/images/calendar.png" alt="">
+                            <span>Год проектирования: {{ project.Meta.Year }}</span>
                         </div>
                     </li>
+
+                    <!-- Status -->
+                    <li>
+                        <div class="meta-single">
+                            <img src="../assets/images/pen.png" alt="">
+                            <span>Статус: {{ project.Meta.Status }}</span>
+                        </div>
+                    </li>
+
+                    <!-- Area -->
+                    <li>
+                        <div class="meta-single">
+                            <img src="../assets/images/full.png" alt="">
+                            <span>Площадь:{{ project.Meta.Area }}</span>
+                        </div>
+                    </li>
+
+                    <!-- Location -->
+                    <li>
+                        <div class="meta-single">
+                            <img src="../assets/images/location.png" alt="">
+                            <span>Расположение: {{ project.Meta.Location }}</span>
+                        </div>
+                    </li>
+
                 </ul>
             </div>            
         </div>
+        
 
     </section>
 
     <!-- Section Full Photo -->
-    <section class="full-photo-list">
+    <section class="full-photo-list" *ngIf="project.Images.SingleColumnImages">
         <div class="container">
-            <div class="full-photo-item">
-                <img src="../assets/images/interier_01.png" alt="">
+            <div class="full-photo-item" *ngFor="let image of project.Images.SingleColumnImages">
+                <img src="../assets/images/{{ image }}" alt="">
             </div>
-            <div class="full-photo-item">
+            <!-- <div class="full-photo-item">
                 <img src="../assets/images/interier_01_02.png" alt="">
-            </div>
+            </div> -->
         </div>    
     </section>
     
     
     <!-- Section: Double Photo -->
-    <section class="short-photo-list-section">
+    <section class="short-photo-list-section" *ngIf="project.Images.TwoColumnImages">
         <div class="container">
             <div class="short-photo-list">
-                <div class=short-photo>
-                    <img src="../assets/images/interier_01_short_01.png" alt="">
+                <div class=short-photo *ngFor="let image of project.Images.TwoColumnImages">
+                    <img src="../assets/images/{{ image }}" alt="">
                 </div>
-                <div class=short-photo>
+                <!-- <div class=short-photo>
                     <img src="../assets/images/interier_01_short_01.png" alt="">
-                </div>
+                </div> -->
             </div>            
         </div>        
     </section>

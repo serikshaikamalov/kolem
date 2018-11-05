@@ -61,18 +61,14 @@ export class ProjectListPageComponent implements OnInit {
                 Id: 2,
                 Title: 'РЕКОНСТРУКЦИЯ ФАСАДА ЗДАНИЙ ГОРОДСКОГО СУДА Г. АЛМАТЫ',
                 TypeId: 2,
-                ImageSrc: '../assets/images/judge_center.png'
+                ImageSrc: '../assets/images/jadge_single.png'
             },
             {
-                Id: 1,
-                Title: 'ДИЗАЙН ИНТЕРЬЕРА 1-КОМНАТНОЙ КВАРТИРЫ АЛМАТЫ, КАЗАХСТАН',
-                TypeId: 3,
-            },
-            {
-                Id: 1,
-                Title: 'ДИЗАЙН ИНТЕРЬЕРА 1-КОМНАТНОЙ КВАРТИРЫ АЛМАТЫ, КАЗАХСТАН',
+                Id: 3,
+                Title: 'ВИЗУАЛИЗАЦИЯ LARSON BERGQUIST HOUSE SCHROEDER, США',
                 TypeId: 2,
-            },
+                ImageSrc: '../assets/images/final_view_01_night.png'
+            }      
         );
 
         this.allProjects = this.projects;        

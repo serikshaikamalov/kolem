@@ -7,9 +7,7 @@ section#project-details-section{
             width: 100%;
         }
 
-        .project-meta{
-            background-color: #000000;
-            opacity: 0.5;
+        .project-meta{                        
             position: absolute;
             top: 0;
             left: 0;
@@ -26,8 +24,43 @@ section#project-details-section{
             }
 
             ul.project-meta-menu{
-                li {
-                    
+                color: white;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 200px;
+
+                li {                    
+                    padding: 30px;
+
+                    &:first-child{
+                        padding-left: 0;                        
+                    }
+
+                    &:last-child{
+                        padding-right: 0;
+                    }
+
+                    .meta-single{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        img{
+                            width: 30px;
+                            height: auto;
+                        }
+
+                        span{
+                            padding-top: 50px;
+                        }
+
+
+                    }
+
+                    a{
+                        color: #ffffff;                                
+                    }
                 }
             }
         }
