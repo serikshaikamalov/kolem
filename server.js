@@ -2,6 +2,8 @@
 require('zone.js/dist/zone-node');
 
 const express = require('express');
+const PORT = process.env.PORT || 5000
+
 const { ngExpressEngine } = require('@nguniversal/express-engine');
 
 const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
@@ -33,6 +35,6 @@ app.get('*', (req, res) => {
 });
 
 // start server and listen
-app.listen(80, () => {
-    console.log('Angular server started on port 3000');
+app.listen(PORT, () => {
+    console.log(`Listening on ${ PORT }`);
 });
