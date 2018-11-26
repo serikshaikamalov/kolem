@@ -1,7 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app.routing.module';
 
+
+
+import { CommonModule } from '@angular/common';
+
+// HTTP Module
+import { HttpClientModule } from '@angular/common/http';
+
+// Routing
+import { AppRoutingModule } from './app-routing.module';
+
+// Entry component
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -9,8 +19,10 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,  
-    AppRoutingModule  
+    CommonModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),  
+    AppRoutingModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
