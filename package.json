@@ -8,6 +8,9 @@
     "build": "npm run build:browser && npm run build:server",
     "serve": "node server.js"
   },
+  "engines": {
+    "node": "8.11.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
@@ -23,6 +26,7 @@
     "@nguniversal/express-engine": "^7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "core-js": "^2.4.1",
+    "ejs": "^2.5.6",
     "express": "^4.16.4",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6",
