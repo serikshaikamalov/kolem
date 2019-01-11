@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
+import { ProjectsService } from '../../services/kolem.service';
 
 @Component({
     selector: 'project-details-page',
@@ -14,21 +15,33 @@ export class ProjectDetailsPageComponent implements OnInit {
     public projects: any[] = [];
     
     constructor( 
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private service: ProjectsService
      ) { }
 
     ngOnInit(): void { 
 
-        this.loadData();
+        // this.loadData();
 
         this.route.params.subscribe( params => {
             this.projectId = params['id'];
             // console.log(this.projectId);
 
-            if( this.projectId ){
-                this.project = this.projects.filter( x => x.Id == this.projectId ).shift();
-                console.log(this.project);
-            }
+            // if( this.projectId ){
+            //     this.project = this.projects.filter( x => x.Id == this.projectId ).shift();
+            //     console.log(this.project);
+            // }
+
+
+            this.service.getSingleProject( this.projectId ).subscribe(
+                result => {
+                    console.log('API project: ', result);
+                    this.project = result;
+                },
+                error =>{
+                    console.log('Error: ', error);
+                }
+            );
 
             
 
@@ -43,7 +56,7 @@ export class ProjectDetailsPageComponent implements OnInit {
 
         this.projects.push(
             {
-                Id: 1,
+                Id: 3,
                 Title: 'ДИЗАЙН 1-КОМНАТНОЙ КВАРТИРЫ В Г. АЛМАТЫ',
                 Images: 
                     {
@@ -54,7 +67,11 @@ export class ProjectDetailsPageComponent implements OnInit {
                         ],
                         TwoColumnImages: [
                             'interier_01_short_01.png',
-                            'interier_01_short_01.png'
+                            'inter_5.png',
+                            'inter_06.png',
+                            'inter_07.png',
+                            'inter_08.png',
+                            'inter_09.png'
                         ]
                 },
                 Meta: {
@@ -84,7 +101,7 @@ export class ProjectDetailsPageComponent implements OnInit {
                 
             },
             {
-                Id: 3,
+                Id: 1,
                 Title: 'ВИЗУАЛИЗАЦИЯ LARSON BERGQUIST HOUSE SCHROEDER, США',
                 Images: 
                     {

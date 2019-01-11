@@ -12,7 +12,7 @@ header{
     section#logo-section{
         a{
             img{
-                height: 30px;
+                height: 45px;
             }
         }        
     }
@@ -21,15 +21,30 @@ header{
     section#main-menu-section{
         ul#main-menu{            
             li{
-                float: left;
-                padding: 0 15px;
-                border-left: 1px solid #ccc;
+                float: left;                                
+
+
                 &:first-child{
                     border-left: none;
+
+                    span{
+                        display: none;
+                    }
+
                 }
+
+                span{
+                    width: 1.5px;
+                    height: 12px;
+                    display: inline-block;
+                    background-color: #231F20;
+                }
+
                 a{
-                    color: #000000;
+                    color: #231F20;
                     text-transform: uppercase;
+                    padding: 0 15px;
+
                     &.active{
                         font-weight: bold;
                     }
@@ -66,12 +81,28 @@ header{
 */
 section#content{
     min-height: 500px;
+    background-color: #EDEDEE;    
+}
+
+footer{
+    background-color: #EDEDEE;    
+
+    p{
+        margin: 0;
+        padding: 16px 0;
+    }
 }
 
 /* 
     FOOTER
 */
-footer{}
+footer{
+    .footer-text{
+        padding-top: 130px;
+        font-size: 12px;
+        color: #808285;
+    }
+}
 
 
 

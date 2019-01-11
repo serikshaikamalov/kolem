@@ -3,7 +3,7 @@
     <!-- Header -->
     <section id="project-details-header-section">
         
-        <img src="../assets/images/{{project.Images.MainImageSrc}}" alt="" *ngIf="project.Images.MainImageSrc">
+        <img src="{{project.mainImage}}" alt="" *ngIf="project.mainImage">
 
         <!-- Shadow -->
         <div class="shadow">
@@ -11,7 +11,7 @@
 
         <div class="project-meta">
             <div class="container">
-                <h1>{{ project.Title }}</h1>
+                <h1>{{ project.title }}</h1>
 
                 <ul class="project-meta-menu">
 
@@ -19,7 +19,7 @@
                     <li>
                         <div class="meta-single">
                             <img src="../assets/images/calendar.png" alt="">
-                            <span>Год проектирования: {{ project.Meta.Year }}</span>
+                            <span>Год проектирования: {{ project.year }}</span>
                         </div>
                     </li>
 
@@ -27,7 +27,7 @@
                     <li>
                         <div class="meta-single">
                             <img src="../assets/images/pen.png" alt="">
-                            <span>Статус: {{ project.Meta.Status }}</span>
+                            <span>Статус: {{ project.status }}</span>
                         </div>
                     </li>
 
@@ -35,7 +35,11 @@
                     <li>
                         <div class="meta-single">
                             <img src="../assets/images/full.png" alt="">
-                            <span>Площадь:{{ project.Meta.Area }}</span>
+                            <span>Площадь:
+                                <span *ngIf="project.area && project.area != '0'">
+                                    {{ project.area }} м2
+                                </span>                                
+                            </span>
                         </div>
                     </li>
 
@@ -43,7 +47,7 @@
                     <li>
                         <div class="meta-single">
                             <img src="../assets/images/location.png" alt="">
-                            <span>Расположение: {{ project.Meta.Location }}</span>
+                            <span>Расположение: {{ project.location }}</span>
                         </div>
                     </li>
 
@@ -55,28 +59,22 @@
     </section>
 
     <!-- Section Full Photo -->
-    <section class="full-photo-list" *ngIf="project.Images.SingleColumnImages">
+    <section class="full-photo-list" *ngIf="project.singleImages">
         <div class="container">
-            <div class="full-photo-item" *ngFor="let image of project.Images.SingleColumnImages">
-                <img src="../assets/images/{{ image }}" alt="">
-            </div>
-            <!-- <div class="full-photo-item">
-                <img src="../assets/images/interier_01_02.png" alt="">
-            </div> -->
+            <div class="full-photo-item" *ngFor="let si of project.singleImages">
+                <img src="{{ si }}" alt="">
+            </div>            
         </div>    
     </section>
     
     
     <!-- Section: Double Photo -->
-    <section class="short-photo-list-section" *ngIf="project.Images.TwoColumnImages">
+    <section class="short-photo-list-section" *ngIf="project.doubleImages">
         <div class="container">
             <div class="short-photo-list">
-                <div class=short-photo *ngFor="let image of project.Images.TwoColumnImages">
-                    <img src="../assets/images/{{ image }}" alt="">
+                <div class=short-photo *ngFor="let di of project.doubleImages">
+                    <img src="{{ di }}" alt="">
                 </div>
-                <!-- <div class=short-photo>
-                    <img src="../assets/images/interier_01_short_01.png" alt="">
-                </div> -->
             </div>            
         </div>        
     </section>

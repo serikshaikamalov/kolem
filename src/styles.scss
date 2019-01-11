@@ -1,3 +1,5 @@
+@import 'assets/fonts/fonts.css';
+
 
 /**
  * THEME
@@ -5,10 +7,12 @@
 html, body{
     padding: 0 !important;
     margin: 0 !important;
+    font-family: 'Manrope';
+
 }
 
 .container{
-    width: 1000px;
+    width: 1300px;
     margin: 0 auto;
 }
 
@@ -85,6 +89,10 @@ ul{
 
 }
 
+.flex-align-center{
+    align-items: center;
+}
+
 
 .text-center{
     text-align: center;
@@ -116,3 +124,17 @@ ul{
 .background-gray{
     background-color: #eee;
 }
+
+
+.kolem-header-wrapper{
+    padding: 30px 0;
+}
+
+.kolem-header{
+    border-left: 2px solid;
+    padding-left: 10px;
+    font-size: 28px;
+    line-height: 29px;
+    margin:0;    
+}
+

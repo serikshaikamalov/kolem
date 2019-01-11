@@ -1,3 +1,11 @@
+@angular/core@5.2.11
+MIT
+MIT
+
+@angular/common@5.2.11
+MIT
+MIT
+
 @angular/platform-browser@5.2.11
 MIT
 MIT
@@ -6,15 +14,7 @@ MIT
 MIT
 MIT
 
-@angular/core@5.2.11
-MIT
-MIT
-
 @nguniversal/module-map-ngfactory-loader@7.0.2
-MIT
-MIT
-
-@angular/common@5.2.11
 MIT
 MIT
 

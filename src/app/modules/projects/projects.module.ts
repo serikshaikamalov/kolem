@@ -7,6 +7,11 @@ import { ProjectDetailsPageComponent } from './pages/project-detail-page/project
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+/**
+ * SERVICES
+ */
+import { ProjectsService } from './services/kolem.service';
+
 
 @NgModule({
   imports: [
@@ -17,6 +22,8 @@ import { CommonModule } from '@angular/common';
     ProjectListPageComponent,
     ProjectDetailsPageComponent
   ],
-  providers: []
+  providers: [
+      ProjectsService
+  ]
 })
 export class ProjectsModule { }

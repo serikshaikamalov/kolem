@@ -14,7 +14,7 @@ export class AboutIndexPageComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.title.setTitle('Home / Angular SSR');
+        this.title.setTitle('О нас');
         this.meta.updateTag({
             'description': 'Welcome to home section'
         });

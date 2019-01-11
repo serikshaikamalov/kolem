@@ -28,7 +28,8 @@ section#project-details-section{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin-top: 200px;
+                margin-top: 85px;
+                margin-bottom: -178px;
 
                 li {                    
                     padding: 30px;
@@ -85,7 +86,7 @@ section#project-details-section{
             justify-content: space-between;
 
             .short-photo{
-                width: 485px;
+                width: 48%;
                 margin-bottom: 30px;
     
                 img{

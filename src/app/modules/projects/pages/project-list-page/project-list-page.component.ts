@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from '../../services/kolem.service';
 
 @Component({
     selector: 'project-list-page',
@@ -12,7 +13,9 @@ export class ProjectListPageComponent implements OnInit {
     public projects: any[] = [];
     public allProjects: any[] = [];
     
-    constructor() { }
+    constructor(
+        private service: ProjectsService
+    ) { }
 
     ngOnInit(): void {        
         this.loadMenu();
@@ -50,28 +53,43 @@ export class ProjectListPageComponent implements OnInit {
      * Projects
      */
     public loadData(){
-        this.projects.push(
-            {
-                Id: 1,
-                Title: 'ДИЗАЙН ИНТЕРЬЕРА 1-КОМНАТНОЙ КВАРТИРЫ АЛМАТЫ, КАЗАХСТАН',
-                TypeId: 1,
-                ImageSrc: '../assets/images/interier_01.png'
-            },
-            {
-                Id: 2,
-                Title: 'РЕКОНСТРУКЦИЯ ФАСАДА ЗДАНИЙ ГОРОДСКОГО СУДА Г. АЛМАТЫ',
-                TypeId: 2,
-                ImageSrc: '../assets/images/jadge_single.png'
-            },
-            {
-                Id: 3,
-                Title: 'ВИЗУАЛИЗАЦИЯ LARSON BERGQUIST HOUSE SCHROEDER, США',
-                TypeId: 2,
-                ImageSrc: '../assets/images/final_view_01_night.png'
-            }      
-        );
 
-        this.allProjects = this.projects;        
+        this.service.getProjects().subscribe(
+            result =>{
+                console.log('API projects: ', result);
+                this.projects = result;                
+                this.allProjects = result;   
+
+                // Sort
+                
+            },
+            error => {  
+                console.log('Eror: ', error);
+            }
+        )
+
+        // this.projects.push(
+        //     {
+        //         Id: 1,
+        //         Title: 'ВИЗУАЛИЗАЦИЯ LARSON BERGQUIST HOUSE SCHROEDER, США',
+        //         TypeId: 3,
+        //         ImageSrc: '../assets/images/02_1.png'
+        //     },
+        //     {
+        //         Id: 2,
+        //         Title: 'РЕКОНСТРУКЦИЯ ФАСАДА ЗДАНИЙ ГОРОДСКОГО СУДА Г. АЛМАТЫ',
+        //         TypeId: 1,
+        //         ImageSrc: '../assets/images/01_1.png'
+        //     },
+        //     {
+        //         Id: 3,
+        //         Title: 'ДИЗАЙН ИНТЕРЬЕРА 1-КОМНАТНОЙ КВАРТИРЫ АЛМАТЫ, КАЗАХСТАН',
+        //         TypeId: 2,
+        //         ImageSrc: '../assets/images/03_1.png'
+        //     }                              
+        // );
+
+        // this.allProjects = this.projects;        
     }
 
 
@@ -82,7 +100,7 @@ export class ProjectListPageComponent implements OnInit {
         this.typeId = typeId;   
 
         if( typeId ){
-            this.projects = this.allProjects.filter( x => x.TypeId == typeId );
+            this.projects = this.allProjects.filter( x => x.type == typeId );
 
         }else{
             this.projects = this.allProjects;

@@ -13,19 +13,18 @@
         <!-- Content -->
         <section id="projects-content-section">
     
-            <div class="project" *ngFor="let project of projects">
+            <div class="project" *ngFor="let project of projects"  routerLink="/projects/details/{{ project._id }}">
                 
                 <!-- Image -->
-                <img src="{{ project.ImageSrc }}" alt="" />
+                <img src="{{ project.avatar }}" alt="" />
 
-                <div class="shadow">
-
-                </div>
+                <!-- Shadow -->
+                <div class="shadow"></div>
                 
                 <!-- Meta -->
                 <div class="meta">
-                    <a routerLink="/projects/details/{{ project.Id }}">
-                        {{ project.Title }}
+                    <a routerLink="/projects/details/{{ project._id }}">
+                        {{ project.title }}
                     </a>                
                     <div class=""></div>
                 </div>
