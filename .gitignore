@@ -4,6 +4,10 @@
 /tmp
 /out-tsc
 
+# outputs
+/dist-browser
+/dist-server
+
 # dependencies
 /node_modules
 

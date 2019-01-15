@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/kolem.service';
 
+// SEO: Meta
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
     selector: 'project-list-page',
     templateUrl: './project-list-page.component.html',
@@ -14,14 +17,36 @@ export class ProjectListPageComponent implements OnInit {
     public allProjects: any[] = [];
     
     constructor(
-        private service: ProjectsService
-    ) { }
+        private service: ProjectsService,
+        private meta: Meta,
+        private titleService: Title
+    ) {
+        this.setTitle();
+        this.setMetaData();
+     }
 
     ngOnInit(): void {        
         this.loadMenu();
         this.loadData();
     }
+    
+    /**
+     * SEO: Title
+     */
+    public setTitle(){        
+        this.titleService.setTitle('Kolem Architecture');
+    }
 
+    /**
+     * SEO: Meta data
+     */
+    public setMetaData(){
+        this.meta.addTag(
+            {
+                name: 'description', 
+                content: 'Архитектурное бюро предлагает своим клиентам весь спектр услуг по архитектуре и дизайну частных и коммерческих интерьеров'
+        });
+    }
 
 
     /**

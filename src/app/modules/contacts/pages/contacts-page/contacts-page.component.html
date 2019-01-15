@@ -42,28 +42,33 @@
                 </div>
 
 
-                <div class="margin-top-50">
+                <div class="margin-top-50" >
                     <p><b>Отправить сообщение</b></p>
 
-                    <form class="contact-form">
+                    <!-- Message -->
+                    <div *ngIf="isMessageSent">
+                        <p>Сообщение отправлено!</p>
+                    </div>
+                
+                    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                         <div>
                             <p>Имя:</p>
-                            <input type="text" placeholder=""/>
+                            <input type="text" formControlName="firstName" placeholder=""/>
                         </div>
 
                         <div>
                             <p>Номер телефона::</p>
-                            <input type="text" placeholder=""/>
+                            <input type="text" formControlName="phoneNumber" placeholder=""/>
                         </div>
 
                         <div>
                             <p>Е-mail адрес: :</p>
-                            <input type="text" placeholder=""/>
+                            <input type="text" formControlName="email" placeholder=""/>
                         </div>
 
                         <div>
                             <p>Сообщение: </p>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" formControlName="message" id="" cols="30" rows="10"></textarea>
                         </div>
 
                         <div>

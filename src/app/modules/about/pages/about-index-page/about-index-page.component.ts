@@ -14,9 +14,9 @@ export class AboutIndexPageComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.title.setTitle('О нас');
+        this.title.setTitle('О нас | Kolem Architecture');
         this.meta.updateTag({
-            'description': 'Welcome to home section'
+            'description': 'Kolem Architecture - это архитектурное бюро, которое работает в области архитектуры и дизайн интерьера. Компания основана на ценностях наследственными корнями , в точности, честностью и порядочностью в работе.'
         });
     }
 }
